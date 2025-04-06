@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.png">
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: 'Inter', sans-serif;
         margin: 0;
@@ -150,7 +153,14 @@
       <div style="text-align: center;">
         <img src="images/logo.png" alt="Changing Places Logo" style="max-height: 240px;" aria-label="Changing Places Logo">
         <p style="margin: 6px 0 4px; font-size: 1.3em; font-weight: 600; letter-spacing: 0.5px; text-shadow: 1px 1px 4px rgba(51, 204, 255, 0.6); color: #ffffff;">Your Nationwide Partner for Moving, Storage & Logistics Excellence</p>
-        <div class="phone">Call Us: (904) 339-5304</div>
+        <div class="phone" style="margin: 20px 0; display: flex; justify-content: center;">
+  <a href="tel:19043395304" style="text-decoration: none;">
+    <button class="cta-button" style="padding: 8px 20px; font-size: 1em; background-color: #33ccff; color: black; border-radius: 30px; border: none; cursor: pointer; margin: 0 auto; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 10px rgba(51,204,255,0.7);">
+  <img src="images/phone-icon.png" alt="Phone Icon" style="height: 18px; width: 18px; filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));">
+  Call Us: (904) 339-5304
+</button>
+  </a>
+</div>
       </div>
       <div class="banner-side">
         <img src="images/certified-icon.png" alt="Licensed & Insured Icon" aria-label="Licensed and DOT Certified">
@@ -167,6 +177,67 @@
     </nav>
 
     <main>
+  <div class="hero" style="padding: 20px 20px; margin-top: 0;">
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: 0 auto;">
+      <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
+        <a href="#contact">
+          <button class="cta-button" style="margin: 0;">Get a Free Quote</button>
+        </a>
+      </div>
+      <div style="flex: 2; min-width: 300px; display: flex; align-items: center;">
+        <p style="margin: 0; font-size: 1.05em; line-height: 1.4em; text-align: left;">
+          At Changing Places Inc, we specialize in providing reliable, full-service logistics across the continental United States. Whether you’re moving freight or storing high-value equipment, we’re your trusted partner in transportation. Our team brings years of industry expertise and leverages real-time tracking to ensure transparency and peace of mind. Built in Jacksonville and operating nationwide, we’re committed to excellence, every mile, every move. Discover the difference that DOT-certified, insured logistics can make.
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 250px; display: flex; align-items: center;">
+        <p style="margin: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.05); border-left: 3px solid #33ccff; border-radius: 6px; font-size: 0.95em; line-height: 1.5em; color: #cceeff;">
+          Serving clients nationwide with precision and care, our Jacksonville-based operations are backed by 24/7 dispatch and real-time visibility tools. Let us help simplify your next move.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" style="padding: 60px 20px; background-color: #0f2027;">
+    <h2>About Us</h2>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
+      Changing Places Inc began in Jacksonville with a simple mission: deliver high-quality logistics solutions with a customer-first mindset. Our team is built from experienced professionals across the moving, storage, and transportation industries who are dedicated to reliability, safety, and transparency. With our 24/7 dispatch capabilities, real-time tracking, and a network that spans the U.S., we’ve grown into a trusted name in logistics.
+    </p>
+  </section>
+
+  <section id="services" style="padding: 60px 20px; background-color: #203a43;">
+    <h2>Our Services</h2>
+    <ul style="max-width: 800px; margin: 0 auto; list-style: none; padding-left: 0;">
+      <li><strong>Residential & Commercial Moving:</strong> Safe, professional relocation for homes and businesses.</li>
+      <li><strong>Storage Solutions:</strong> Monitored, climate-controlled storage facilities for short and long-term needs.</li>
+      <li><strong>Freight Logistics:</strong> Freight coordination with real-time visibility and DOT-certified coverage.</li>
+      <li><strong>Packing & Unpacking:</strong> Expert handling and customized packing services to protect your assets.</li>
+    </ul>
+  </section>
+
+  <section id="tech" style="padding: 60px 20px; background-color: #2c5364;">
+    <h2>Technology</h2>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
+      Our logistics system features GPS-integrated fleet tracking, real-time customer dashboards, automated dispatching, and secure cloud-based record keeping. This infrastructure empowers clients with unmatched transparency and enables our team to deliver on-time, every time. Whether you're a shipper or a property manager, you can rely on our smart tools to streamline operations.
+    </p>
+  </section>
+
+  <section id="careers" style="padding: 60px 20px; background-color: #1a1a2e;">
+    <h2>Careers</h2>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
+      We are hiring CDL drivers, dispatchers, logistics techs, and customer service reps. At Changing Places Inc, we invest in our people with competitive pay, benefits, and a team culture that respects hard work and innovation. Join a company where your work is appreciated and your potential has no ceiling.
+    </p>
+  </section>
+
+  <section id="contact" style="padding: 60px 20px; background-color: #203a43;">
+    <h2>Contact Us</h2>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
+      Ready to move forward? Reach us 24/7 by phone or email, or send a request using the contact form below. Our team will respond promptly.
+    </p>
+    <ul style="max-width: 800px; margin: 20px auto; font-size: 1em;">
+      <li><strong>Phone:</strong> <a href="tel:19043395304" style="color: #33ccff; text-decoration: none;">(904) 339-5304</a></li>
+      <li><strong>Email:</strong> <a href="mailto:info@changingplacesinc.com" style="color: #33ccff; text-decoration: none;">info@changingplacesinc.com</a></li>
+    </ul>
+  </section>
   <div class="hero" style="padding: 20px 20px;">
     <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: 0 auto;">
       <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
