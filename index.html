@@ -1,161 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Changing Places Inc | Moving, Storage & Logistics</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo.png">
-  <style>
-    :root {
-      --primary-color: #1a1a2e;
-      --accent-color: #16213e;
-      --highlight-color: #0f3460;
-      --text-color: #eaeaea;
-      --bg-color: #1a1a2e;
-      --card-bg: #202842;
-      --white: #ffffff;
-      --shadow: 0 4px 12px rgba(0,0,0,0.3);
-      --cta-color: #33ccff;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trusted nationwide moving, storage, and logistics services built in Jacksonville. Changing Places Inc delivers reliable, insured, and certified transportation solutions across the U.S.">
+    <title>Changing Places Inc | Moving, Storage & Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background-color: #0f2027;
+        color: white;
+      }
+      header, main, footer {
+        display: block;
+      }
+      .banner-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+      .banner-side:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 12px rgba(51, 204, 255, 0.8));
+      }
+      .banner-side img {
+        max-height: 100px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+      .banner-side img:hover {
+        filter: drop-shadow(0 0 15px rgba(51, 204, 255, 1));
+        transform: rotate(5deg) scale(1.1);
+      }
+      .banner-side span {
+        margin-top: 6px;
+        font-size: 0.95em;
+        line-height: 1.3em;
+      }
+      .phone {
+        font-size: 1.2em;
+        color: #33ccff;
+        text-align: center;
+        margin-top: 10px;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        background-color: #0f3460;
+        padding: 14px 0;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 25px;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+      }
+      nav a:hover {
+        color: #33ccff;
+      }
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1592788520961-bb3f736b73cc?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      }
+      .hero p {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.2em;
+        line-height: 1.6em;
+        padding: 20px;
+      }
+      .cta-button {
+        margin-top: 15px;
+        padding: 12px 25px;
+        background-color: #33ccff;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .cta-button:hover {
+        background-color: #00bfff;
+        transform: scale(1.05);
+      }
+      .features {
+        padding: 40px;
+        background-color: #203a43;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .feature {
+        background: #2c5364;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 255, 255, 0.3);
+      }
+      .testimonials {
+        padding: 40px;
+        background-color: #1a1a2e;
+      }
+      blockquote {
+        font-style: italic;
+        margin: 20px auto;
+        max-width: 800px;
+      }
+      @media screen and (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+        }
+        nav a {
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header style="display: flex; justify-content: space-around; align-items: center; background: linear-gradient(135deg, #002233 0%, #004466 100%); padding: 10px 10px 0 10px;">
+      <div class="banner-side">
+        <img src="images/clock-icon.png" alt="24/7 Dispatch Icon" aria-label="24/7 Dispatch">
+        <span>24/7 Dispatch<br>Real-Time Updates</span>
+      </div>
+      <div style="text-align: center;">
+        <img src="images/logo.png" alt="Changing Places Logo" style="max-height: 240px;" aria-label="Changing Places Logo">
+        <p style="margin: 6px 0 4px; font-size: 1.3em; font-weight: 600; letter-spacing: 0.5px; text-shadow: 1px 1px 4px rgba(51, 204, 255, 0.6); color: #ffffff;">Your Nationwide Partner for Moving, Storage & Logistics Excellence</p>
+        <div class="phone">Call Us: (904) 339-5304</div>
+      </div>
+      <div class="banner-side">
+        <img src="images/certified-icon.png" alt="Licensed & Insured Icon" aria-label="Licensed and DOT Certified">
+        <span>Licensed & Insured<br>DOT Certified Nationwide</span>
+      </div>
+    </header>
 
-    * {
-      box-sizing: border-box;
-    }
+    <nav aria-label="Main Navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#tech">Technology</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    .top-banner {
-  background: linear-gradient(135deg, #002233 0%, #004466 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-  color: var(--white);
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
-}
-
-    .top-banner img {
-  display: block;
-  margin: 10px auto;
-  padding: 0;
-  max-height: 280px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-    }
-
-    .top-banner h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-
-    .top-banner p {
-      margin: 8px 0 0;
-      font-size: 1.1em;
-    }
-
-    .phone {
-      font-size: 1.2em;
-      margin-top: 6px;
-      color: var(--cta-color);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: var(--highlight-color);
-      padding: 14px 0;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin: 0 25px;
-      font-weight: 600;
-      font-size: 1.1em;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--cta-color);
-    }
-
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1592788520961-bb3f736b73cc?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: var(--white);
-      font-size: 1.6em;
-      font-weight: bold;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-      position: relative;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    .hero .cta-button {
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: var(--cta-color);
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .hero .cta-button:hover {
-      background-color: #29b6f6;
-    }
-  </style>
-</head>
-<body>
-  <div class="top-banner">
-    <img src="images/logo.png" alt="Changing Places Logo">
-    <p>National Moving, Storage & Logistics Solutions</p>
-    <div class="phone">Call Us: (904) 339-5304</div>
+    <main>
+  <div class="hero" style="padding: 20px 20px;">
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: 0 auto;">
+      <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
+        <a href="#contact">
+          <button class="cta-button" style="margin: 0;">Get a Free Quote</button>
+        </a>
+      </div>
+      <div style="flex: 2; min-width: 300px; display: flex; align-items: center;">
+        <p style="margin: 0; font-size: 1.05em; line-height: 1.4em; text-align: left;">
+          At Changing Places Inc, we specialize in providing reliable, full-service logistics across the continental United States. Whether you’re moving freight or storing high-value equipment, we’re your trusted partner in transportation. Our team brings years of industry expertise and leverages real-time tracking to ensure transparency and peace of mind. Built in Jacksonville and operating nationwide, we’re committed to excellence, every mile, every move. Discover the difference that DOT-certified, insured logistics can make.
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 250px; display: flex; align-items: center;">
+        <p style="margin: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.05); border-left: 3px solid #33ccff; border-radius: 6px; font-size: 0.95em; line-height: 1.5em; color: #cceeff;">
+          Serving clients nationwide with precision and care, our Jacksonville-based operations are backed by 24/7 dispatch and real-time visibility tools. Let us help simplify your next move.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#tech">Technology</a>
-    <a href="#careers">Careers</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Fast & Reliable</h3>
+            <p>We deliver on time, every time. Our team ensures your cargo arrives safely and promptly.</p>
+          </div>
+          <div class="feature">
+            <h3>Nationwide Coverage</h3>
+            <p>From coast to coast, our logistics network ensures full U.S. coverage with precision routing.</p>
+          </div>
+          <div class="feature">
+            <h3>Secure Storage</h3>
+            <p>Climate-controlled and monitored storage options available for peace of mind.</p>
+          </div>
+          <div class="feature">
+            <h3>Advanced Tracking</h3>
+            <p>Track your shipments in real-time with our integrated technology platform.</p>
+          </div>
+        </div>
+      </section>
 
-  <div class="hero">
-    Trusted Nationwide Logistics. Built in Jacksonville.
-    <a href="#contact"><button class="cta-button">Get a Free Quote</button></a>
-  </div>
-</body>
+      <section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <blockquote>
+    "From the first call to final delivery, the team at Changing Places was professional, friendly, and efficient. Our move from Atlanta, Georgia was seamless. We couldn't have asked for a better experience."
+    – Lisa M., Georgia
+  </blockquote>
+  <blockquote>
+    "We stored commercial equipment with them in Charleston for over a year. Everything was spotless and secure when we picked it up. Their real-time tracking system is a game changer."
+    – Darnell P., South Carolina
+  </blockquote>
+  <blockquote>
+    "I needed a quick logistics solution during a tight timeline. Their Jacksonville crew was fast, careful, and kept me in the loop the entire time. I'm thoroughly impressed."
+    – Rachel T., Florida
+  </blockquote>
+  <blockquote>
+    "After working with several moving companies in the past, Changing Places stands out. The communication was consistent, the pricing fair, and the care they took with our belongings in Birmingham exceeded expectations."
+    – Greg H., Alabama
+  </blockquote>
+  <blockquote>
+    "Outstanding service across the board. I especially appreciated the 24/7 updates while coordinating a delivery into Nashville. Would absolutely use them again."
+    – Beth A., Tennessee
+  </blockquote>
+</section>
+    </main>
+  </body>
 </html>
