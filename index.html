@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,24 @@
     <title>Changing Places Inc | Moving, Storage & Logistics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.png">
     <style>
+      #nav-links {
+        transition: max-height 0.3s ease-out, opacity 0.3s ease;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0f3460;
+        width: 100%;
+      }
+
+      #nav-links.show {
+        max-height: 500px;
+        opacity: 1;
+      }
       html {
         scroll-behavior: smooth;
       }
@@ -135,6 +151,19 @@
         max-width: 800px;
       }
       @media screen and (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  #nav-links {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    background-color: #0f3460;
+    padding-bottom: 10px;
+  }
+  #nav-links a {
+    margin: 10px 0;
+  }
         nav {
           flex-wrap: wrap;
         }
@@ -142,70 +171,215 @@
           margin: 10px;
         }
       }
-    </style>
+      @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .banner-side {
+      margin: 10px 0;
+    }
+    .phone {
+      margin: 15px 0;
+    }
+    .hero {
+      padding: 20px 10px;
+    }
+    .hero > div {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    nav a {
+      margin: 8px;
+    }
+    .cta-button {
+      width: 100%;
+      max-width: 300px;
+    }
+    .testimonials blockquote {
+      font-size: 0.95em;
+      padding: 0 10px;
+    }
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .hero > div {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero p, .hero .cta-button {
+      text-align: center;
+    }
+
+    .banner-side {
+      margin: 15px 0;
+    }
+
+    .phone {
+      margin: 20px 0;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .cta-button {
+      max-width: 400px;
+      width: 80%;
+    }
+
+    .testimonials blockquote {
+      padding: 0 15px;
+      font-size: 1em;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    header {
+      flex-direction: column;
+      padding: 20px 10px;
+    }
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      display: block;
+      margin: 10px auto;
+    }
+    .hero {
+      padding: 30px 15px;
+    }
+    .hero > div {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .cta-button {
+      width: 100%;
+      max-width: 280px;
+      font-size: 1em;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .feature {
+      padding: 16px;
+    }
+    .testimonials blockquote {
+      font-size: 0.95em;
+      padding: 0 12px;
+    }
+    .banner-side img {
+      max-height: 80px;
+    }
+    .banner-side span {
+      font-size: 0.9em;
+    }
+  }
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-fade.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  img[data-src] {
+    filter: blur(10px);
+    transition: filter 0.5s ease;
+  }
+  img[data-src].loaded {
+    filter: blur(0);
+  }
+  @keyframes fadeZoom {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
   </head>
   <body>
+    <div class="company-name" style="text-align: center; padding: 20px 0; background: radial-gradient(circle at center, #004466 0%, #001a2e 100%); color: #33ccff; font-weight: 900; font-size: 2em; letter-spacing: 2px; text-shadow: 0 0 12px rgba(51,204,255,0.8); font-family: 'Orbitron', sans-serif, Arial, sans-serif;">
+  Changing Places Inc
+</div>
     <header style="display: flex; justify-content: space-around; align-items: center; background: linear-gradient(135deg, #002233 0%, #004466 100%); padding: 10px 10px 0 10px;">
       <div class="banner-side">
-        <img src="images/clock-icon.png" alt="24/7 Dispatch Icon" aria-label="24/7 Dispatch">
+        <img data-src="images/clock-icon.png" alt="24/7 Dispatch Icon" aria-label="24/7 Dispatch">
         <span>24/7 Dispatch<br>Real-Time Updates</span>
       </div>
       <div style="text-align: center;">
-        <img src="images/logo.png" alt="Changing Places Logo" style="max-height: 240px;" aria-label="Changing Places Logo">
-        <p style="margin: 6px 0 4px; font-size: 1.3em; font-weight: 600; letter-spacing: 0.5px; text-shadow: 1px 1px 4px rgba(51, 204, 255, 0.6); color: #ffffff;">Your Nationwide Partner for Moving, Storage & Logistics Excellence</p>
+        <a href="#top"><img data-src="images/logo.png" alt="Changing Places Logo" style="max-height: 240px; animation: fadeZoom 1.2s ease forwards; opacity: 0; transform: scale(0.8);" aria-label="Changing Places Logo"></a>
+        <p style="margin: 12px auto 10px; font-size: 1.35em; font-weight: 600; letter-spacing: 0.8px; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); font-style: italic; max-width: 640px;"><a href="#about" style="text-decoration: none; color: inherit;">Your Nationwide Partner for Moving, Storage & Logistics Excellence</a></p>
         <div class="phone" style="margin: 20px 0; display: flex; justify-content: center;">
   <a href="tel:19043395304" style="text-decoration: none;">
     <button class="cta-button" style="padding: 8px 20px; font-size: 1em; background-color: #33ccff; color: black; border-radius: 30px; border: none; cursor: pointer; margin: 0 auto; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 10px rgba(51,204,255,0.7);">
-  <img src="images/phone-icon.png" alt="Phone Icon" style="height: 18px; width: 18px; filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));">
+  <img data-src="images/phone-icon.png" alt="Phone Icon" style="height: 18px; width: 18px; filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));">
   Call Us: (904) 339-5304
 </button>
   </a>
 </div>
       </div>
       <div class="banner-side">
-        <img src="images/certified-icon.png" alt="Licensed & Insured Icon" aria-label="Licensed and DOT Certified">
+        <img data-src="images/certified-icon.png" alt="Licensed & Insured Icon" aria-label="Licensed and DOT Certified">
         <span>Licensed & Insured<br>DOT Certified Nationwide</span>
       </div>
     </header>
 
-    <nav aria-label="Main Navigation">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#tech">Technology</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <nav aria-label="Main Navigation" id="navbar">
+  <button id="menu-toggle" style="display: none; background: none; border: none; color: white; font-size: 1.5em; position: absolute; left: 10px; top: 12px; cursor: pointer; z-index: 1001;">☰</button>
+  <div id="nav-links" style="display: flex; justify-content: center; width: 100%;">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#tech">Technology</a>
+    <a href="#careers">Careers</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.add('show');
+    } else {
+      navLinks.classList.remove('show');
+    }
+  });
+  // Prevent auto scroll to anchor on load
+  window.addEventListener('load', function () {
+    if (window.location.hash) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        history.replaceState('', document.title, window.location.pathname + window.location.search);
+      }, 0);
+    }
+  });
+</script>
 
     <main>
-  <div class="hero" style="padding: 20px 20px; margin-top: 0;">
-    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: 0 auto;">
-      <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
-        <a href="#contact">
-          <button class="cta-button" style="margin: 0;">Get a Free Quote</button>
-        </a>
-      </div>
-      <div style="flex: 2; min-width: 300px; display: flex; align-items: center;">
-        <p style="margin: 0; font-size: 1.05em; line-height: 1.4em; text-align: left;">
-          At Changing Places Inc, we specialize in providing reliable, full-service logistics across the continental United States. Whether you’re moving freight or storing high-value equipment, we’re your trusted partner in transportation. Our team brings years of industry expertise and leverages real-time tracking to ensure transparency and peace of mind. Built in Jacksonville and operating nationwide, we’re committed to excellence, every mile, every move. Discover the difference that DOT-certified, insured logistics can make.
-        </p>
-      </div>
-      <div style="flex: 1; min-width: 250px; display: flex; align-items: center;">
-        <p style="margin: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.05); border-left: 3px solid #33ccff; border-radius: 6px; font-size: 0.95em; line-height: 1.5em; color: #cceeff;">
-          Serving clients nationwide with precision and care, our Jacksonville-based operations are backed by 24/7 dispatch and real-time visibility tools. Let us help simplify your next move.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <section id="about" style="padding: 60px 20px; background-color: #0f2027;">
-    <h2>About Us</h2>
+  <section id="about" style="padding: 30px 20px; background-color: #0f2027;">
+    <h2 class="scroll-fade">About Us</h2>
     <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
       Changing Places Inc began in Jacksonville with a simple mission: deliver high-quality logistics solutions with a customer-first mindset. Our team is built from experienced professionals across the moving, storage, and transportation industries who are dedicated to reliability, safety, and transparency. With our 24/7 dispatch capabilities, real-time tracking, and a network that spans the U.S., we’ve grown into a trusted name in logistics.
     </p>
   </section>
 
   <section id="services" style="padding: 60px 20px; background-color: #203a43;">
-    <h2>Our Services</h2>
+    <h2 class="scroll-fade">Our Services</h2>
     <ul style="max-width: 800px; margin: 0 auto; list-style: none; padding-left: 0;">
       <li><strong>Residential & Commercial Moving:</strong> Safe, professional relocation for homes and businesses.</li>
       <li><strong>Storage Solutions:</strong> Monitored, climate-controlled storage facilities for short and long-term needs.</li>
@@ -215,30 +389,30 @@
   </section>
 
   <section id="tech" style="padding: 60px 20px; background-color: #2c5364;">
-    <h2>Technology</h2>
+    <h2 class="scroll-fade">Technology</h2>
     <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
       Our logistics system features GPS-integrated fleet tracking, real-time customer dashboards, automated dispatching, and secure cloud-based record keeping. This infrastructure empowers clients with unmatched transparency and enables our team to deliver on-time, every time. Whether you're a shipper or a property manager, you can rely on our smart tools to streamline operations.
     </p>
   </section>
 
   <section id="careers" style="padding: 60px 20px; background-color: #1a1a2e;">
-    <h2>Careers</h2>
+    <h2 class="scroll-fade">Careers</h2>
     <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
-      We are hiring CDL drivers, dispatchers, logistics techs, and customer service reps. At Changing Places Inc, we invest in our people with competitive pay, benefits, and a team culture that respects hard work and innovation. Join a company where your work is appreciated and your potential has no ceiling.
-    </p>
+        Moving forward with Changing Places Inc means joining a company that’s committed to professional growth, safety, and operational excellence. We are actively hiring CDL drivers, skilled dispatchers, logistics technicians, and customer service representatives. Our team-first culture blends hard work with innovation—offering competitive pay, great benefits, and upward mobility in a company that handles not only moves, but full-service logistics and secure storage from coast to coast.
+      </p>
   </section>
 
   <section id="contact" style="padding: 60px 20px; background-color: #203a43;">
-    <h2>Contact Us</h2>
+    <h2 class="scroll-fade">Contact Us</h2>
     <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
       Ready to move forward? Reach us 24/7 by phone or email, or send a request using the contact form below. Our team will respond promptly.
     </p>
     <ul style="max-width: 800px; margin: 20px auto; font-size: 1em;">
       <li><strong>Phone:</strong> <a href="tel:19043395304" style="color: #33ccff; text-decoration: none;">(904) 339-5304</a></li>
-      <li><strong>Email:</strong> <a href="mailto:info@changingplacesinc.com" style="color: #33ccff; text-decoration: none;">info@changingplacesinc.com</a></li>
+      <li><strong>Email:</strong> <a href="mailto:info@changingplacesnow.com" style="color: #33ccff; text-decoration: none;">info@changingplacesnow.com</a></li>
     </ul>
   </section>
-  <div class="hero" style="padding: 20px 20px;">
+  <div class="midpage-section" style="padding: 10px 20px;">
     <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: 0 auto;">
       <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
         <a href="#contact">
@@ -259,50 +433,107 @@
   </div>
 
   <section class="features">
-        <h2>Why Choose Us?</h2>
+        <h2 class="scroll-fade">Why Choose Us?</h2>
         <div class="features-grid">
-          <div class="feature">
-            <h3>Fast & Reliable</h3>
-            <p>We deliver on time, every time. Our team ensures your cargo arrives safely and promptly.</p>
-          </div>
-          <div class="feature">
-            <h3>Nationwide Coverage</h3>
-            <p>From coast to coast, our logistics network ensures full U.S. coverage with precision routing.</p>
-          </div>
-          <div class="feature">
-            <h3>Secure Storage</h3>
-            <p>Climate-controlled and monitored storage options available for peace of mind.</p>
-          </div>
-          <div class="feature">
-            <h3>Advanced Tracking</h3>
-            <p>Track your shipments in real-time with our integrated technology platform.</p>
-          </div>
+          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
+          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
+          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
+          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
         </div>
       </section>
 
       <section class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <blockquote>
-    "From the first call to final delivery, the team at Changing Places was professional, friendly, and efficient. Our move from Atlanta, Georgia was seamless. We couldn't have asked for a better experience."
-    – Lisa M., Georgia
-  </blockquote>
-  <blockquote>
-    "We stored commercial equipment with them in Charleston for over a year. Everything was spotless and secure when we picked it up. Their real-time tracking system is a game changer."
-    – Darnell P., South Carolina
-  </blockquote>
-  <blockquote>
-    "I needed a quick logistics solution during a tight timeline. Their Jacksonville crew was fast, careful, and kept me in the loop the entire time. I'm thoroughly impressed."
-    – Rachel T., Florida
-  </blockquote>
-  <blockquote>
-    "After working with several moving companies in the past, Changing Places stands out. The communication was consistent, the pricing fair, and the care they took with our belongings in Birmingham exceeded expectations."
-    – Greg H., Alabama
-  </blockquote>
-  <blockquote>
-    "Outstanding service across the board. I especially appreciated the 24/7 updates while coordinating a delivery into Nashville. Would absolutely use them again."
-    – Beth A., Tennessee
-  </blockquote>
+  <h2 class="scroll-fade">What Our Clients Say</h2>
+  <blockquote><a href="#contact" style="color: inherit; text-decoration: none;">“Changing Places exceeded our expectations—quick, careful, and professional!” – Sarah, Georgia</a></blockquote>
+  <blockquote><a href="#contact" style="color: inherit; text-decoration: none;">“We moved our business cross-country, and these guys handled it all without a hitch.” – Marcus, North Carolina</a></blockquote>
+  <blockquote><a href="#contact" style="color: inherit; text-decoration: none;">“The best logistics support we’ve ever received—on time and on point.” – Jennifer, Florida</a></blockquote>
+  <blockquote><a href="#contact" style="color: inherit; text-decoration: none;">“From packing to delivery, everything was seamless.” – Bryan, South Carolina</a></blockquote>
+  <blockquote><a href="#contact" style="color: inherit; text-decoration: none;">“Hands-down the smoothest move we’ve had. Highly recommend!” – Elaine, Alabama</a></blockquote>
 </section>
-    </main>
-  </body>
+    <footer style="background-color: #0f2027; color: #ccc; padding: 40px 20px; text-align: center; font-size: 0.95em;">
+  <p>&copy; 2025 Changing Places Inc. All rights reserved.</p>
+  <p>
+    <a href="#" style="color: #33ccff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
+    <a href="#" style="color: #33ccff; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
+    <a href="https://www.linkedin.com" target="_blank" style="color: #33ccff; text-decoration: none; margin: 0 10px;">LinkedIn</a>
+  </p>
+</footer>
+</main>
+<script>
+  // Scroll animation trigger
+  const fadeEls = document.querySelectorAll('.scroll-fade');
+  const scrollObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  fadeEls.forEach(el => scrollObserver.observe(el));
+
+  // Lazy loading images
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        img.onload = () => img.classList.add('loaded');
+        img.removeAttribute('data-src');
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '0px 0px 100px 0px',
+    threshold: 0.01
+  });
+  lazyImages.forEach(img => imageObserver.observe(img));
+</script>
+  <!-- Floating Call Button -->
+<a href="tel:19043395304" style="position: fixed; bottom: 20px; right: 20px; background-color: #33ccff; color: black; padding: 12px 20px; border-radius: 50px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 12px rgba(51, 204, 255, 0.6); text-decoration: none; z-index: 10000;">
+  📞 Call Now
+</a>
+<!-- Scroll to Top Button -->
+<button id="scrollToTop" style="position: fixed; bottom: 80px; right: 20px; display: none; background-color: #33ccff; color: #000; border: none; border-radius: 50%; padding: 12px; font-size: 1.2em; cursor: pointer; box-shadow: 0 0 10px rgba(51,204,255,0.7); z-index: 10000;">↑</button>
+
+<!-- Contact Modal -->
+<div id="contactModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); z-index: 10001; justify-content: center; align-items: center;">
+  <div style="background: #1a1a2e; color: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 400px; text-align: center; position: relative;">
+    <button onclick="document.getElementById('contactModal').style.display='none'" style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; color: #33ccff; font-size: 1.2em; cursor: pointer;">×</button>
+    <h3>Contact Us</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <textarea placeholder="Your Message" required style="width: 100%; padding: 10px; height: 100px;"></textarea>
+      <button type="submit" style="margin-top: 10px; background-color: #33ccff; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer;">Send</button>
+    </form>
+  </div>
+</div>
+
+<!-- Floating Contact Button -->
+<button onclick="document.getElementById('contactModal').style.display='flex'" style="position: fixed; bottom: 140px; right: 20px; background-color: #33ccff; color: black; padding: 12px 20px; border-radius: 50px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 12px rgba(51, 204, 255, 0.6); text-decoration: none; z-index: 10000; border: none;">✉️ Contact</button>
+
+<script>
+  // Scroll-to-top button behavior
+  const scrollBtn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+// Smooth scroll on nav link click
+  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
 </html>
