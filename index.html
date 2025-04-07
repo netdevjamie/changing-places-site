@@ -11,6 +11,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.png">
     <style>
+
+/* Main navigation links container */
+/* Ensure the navbar container is centered */
+#navbar {
+  width: 100%;             /* Make navbar take full width */
+  display: flex;
+  justify-content: center; /* Center navbar content horizontally */
+}
+
+/* Main navigation links container */
+#nav-links {
+  display: flex;                  /* Use flexbox for links */
+  justify-content: center;         /* Center links horizontally */
+  align-items: center;             /* Center items vertically */
+  gap: 20px;                       /* Space between links */
+  width: auto;                     /* Allow the width to adjust dynamically */
+  flex-wrap: wrap;                 /* Ensure links wrap if needed */
+  text-align: center;              /* Ensure text is centered in each link */
+}
+
+/* Ensure the links inside the navbar are centered */
+#nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+#nav-links a:hover {
+  color: #33ccff;                  /* Change color on hover */
+}
+
+/* For smaller screen sizes (e.g., mobile/tablet) */
+@media screen and (max-width: 1200px) {
+  #nav-links {
+    justify-content: center;       /* Ensure the links remain centered */
+  }
+}
+
+
+/* For smaller screens (when browser window is small) */
+@media screen and (max-width: 1024px) {
+  .floating-buttons {
+    position: fixed;
+    top: 100px; /* Increase to move the button further down */
+    right: 20px; /* Keep it 20px from the right */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .floating-buttons button {
+    width: 100%;
+    max-width: 240px;  /* Button width */
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 0.9em;   /* Reduce font size slightly */
+    opacity: 0.9;       /* Optional: semi-transparent */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .floating-buttons button:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+
       /* Container for the section that holds everything */
 .midpage-section > div {
   display: flex;
@@ -376,7 +445,7 @@ nav a:hover {
           <a href="tel:19043395304" style="text-decoration: none;">
             <button style="background-color: #33ccff; color: black; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(51, 204, 255, 0.6); border: none; cursor: pointer; display: flex; align-items: center; gap: 10px;">
               <i class="fas fa-phone-alt" style="font-size: 20px; color: black;"></i>
-              Call Us: (904) 339-5304
+              Reach Us By Phone: (904) 339-5304
             </button>
           </a>
         </div>
@@ -388,15 +457,14 @@ nav a:hover {
     </header>
 
     <nav aria-label="Main Navigation" id="navbar">
-      <button id="menu-toggle" style="display: none; background: none; border: none; color: white; font-size: 1.5em; position: absolute; left: 10px; top: 12px; cursor: pointer; z-index: 1001;">☰</button>
       <div id="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#tech">Technology</a>
+        <a href="#about">About</a> | 
+        <a href="#services">Services</a> | 
+        <a href="#tech">Technology</a> | 
         <a href="#careers">Careers</a>
       </div>
     </nav>
-
+    
     <main>
       <section id="about" style="padding: 30px 20px; background-color: #0f2027;">
         <h2 class="scroll-fade">About Us</h2>
