@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply Now - Changing Places Inc</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your site's CSS -->
+  <style>
+    /* Additional styles for Apply Now page */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a2e;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .form-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #203a43;
+      border-radius: 8px;
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .form-container input,
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 1em;
+    }
+    
+    .form-container button {
+      background-color: #33ccff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .form-container button:hover {
+      background-color: #00bfff;
+    }
+
+    /* Back to Main Page Button */
+    .back-button {
+      display: block;
+      background-color: #33ccff;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1em;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      margin: 20px auto 30px;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background-color: #00bfff;
+    }
+
+    /* Success Message */
+    .success-message {
+      background-color: #33ccff;
+      color: black;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html">
+          <button class="cta-button" style="padding: 12px 25px; font-size: 1em; background-color: #33ccff; color: #000; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">
+            ← Back to Main Page
+          </button>
+        </a>
+      </div>
+
+  <!-- Application Form -->
+  <div class="form-container">
+    <h2>Job Application Form</h2>
+    <form id="applicationForm" action="#" method="POST" enctype="multipart/form-data">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <!-- Success message that will show after successful form submission -->
+    <div id="successMessage" class="success-message">
+      Your resume has been submitted successfully! Thank you for applying.
+    </div>
+  </div>
+
+  <script>
+    // Handling form submission
+    document.getElementById("applicationForm").addEventListener("submit", function(event) {
+      event.preventDefault();  // Prevents the default form submission
+      // Show the success message
+      document.getElementById("successMessage").style.display = "block";
+      // Optionally, hide the form or reset it after submission
+      setTimeout(function() {
+        document.getElementById("applicationForm").reset();
+        document.getElementById("successMessage").style.display = "none"; // Hide the success message after a while
+      }, 5000); // Hide the success message after 5 seconds
+    });
+  </script>
+</body>
+</html>
