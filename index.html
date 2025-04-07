@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +15,17 @@
 .midpage-section > div {
   display: flex;
   justify-content: center;
-  align-items: stretch;  /* Ensure both the button and paragraph stretch the same height */
-  gap: 30px;
-  max-width: 1500px;  /* Increase max-width of container to give more room */
+  align-items: center;
+  gap: 20px;
   width: 100%;
-  margin: 0 auto;  /* Center content */
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 /* Paragraph container: Increase width further to fill more space */
 .midpage-section > div:nth-child(2) {
   flex: 2;
-  min-width: 500px;  /* Further increase the paragraph width */
+  min-width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +34,7 @@
 /* Blurb container */
 .midpage-section > div:nth-child(3) {
   flex: 1;
-  min-width: 350px;  /* You can keep this or increase slightly if you prefer */
+  min-width: 350px;
 }
 
 /* Ensure paragraph text takes up full width */
@@ -44,7 +43,7 @@
   font-size: 1.05em;
   line-height: 1.4em;
   text-align: left;
-  flex-grow: 1;  /* Allow paragraph to stretch */
+  flex-grow: 1;
 }
 
 #nav-links {
@@ -376,15 +375,11 @@ nav a:hover {
         <div class="phone" style="margin: 20px 0; display: flex; justify-content: center;">
           <a href="tel:19043395304" style="text-decoration: none;">
             <button style="background-color: #33ccff; color: black; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(51, 204, 255, 0.6); border: none; cursor: pointer; display: flex; align-items: center; gap: 10px;">
-              <!-- Font Awesome Phone Icon -->
               <i class="fas fa-phone-alt" style="font-size: 20px; color: black;"></i>
               Call Us: (904) 339-5304
             </button>
           </a>
-          
-</button>
-  </a>
-</div>
+        </div>
       </div>
       <div class="banner-side">
         <img data-src="images/certified-icon.png" alt="Licensed & Insured Icon" aria-label="Licensed and DOT Certified">
@@ -393,42 +388,22 @@ nav a:hover {
     </header>
 
     <nav aria-label="Main Navigation" id="navbar">
-  <button id="menu-toggle" style="display: none; background: none; border: none; color: white; font-size: 1.5em; position: absolute; left: 10px; top: 12px; cursor: pointer; z-index: 1001;">☰</button>
-  <div id="nav-links">
-  <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#tech">Technology</a>
-    <a href="#careers">Careers</a>
-  </div>
-</nav>
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      navLinks.classList.add('show');
-    } else {
-      navLinks.classList.remove('show');
-    }
-  });
-  // Prevent auto scroll to anchor on load
-  if (window.location.hash) {
-    window.scrollTo(0, 0);
-    history.replaceState('', document.title, window.location.pathname + window.location.search);
-  }
-</script>
+      <button id="menu-toggle" style="display: none; background: none; border: none; color: white; font-size: 1.5em; position: absolute; left: 10px; top: 12px; cursor: pointer; z-index: 1001;">☰</button>
+      <div id="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#tech">Technology</a>
+        <a href="#careers">Careers</a>
+      </div>
+    </nav>
 
     <main>
-
-  <section id="about" style="padding: 30px 20px; background-color: #0f2027;">
-    <h2 class="scroll-fade">About Us</h2>
-    <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
-      Changing Places Inc began in Jacksonville with a simple mission: deliver high-quality logistics solutions with a customer-first mindset. Our team is built from experienced professionals across the moving, storage, and transportation industries who are dedicated to reliability, safety, and transparency. With our 24/7 dispatch capabilities, real-time tracking, and a network that spans the U.S., we’ve grown into a trusted name in logistics.
-    </p>
-  </section>
+      <section id="about" style="padding: 30px 20px; background-color: #0f2027;">
+        <h2 class="scroll-fade">About Us</h2>
+        <p style="max-width: 800px; margin: 0 auto; line-height: 1.6em; font-size: 1.05em;">
+          Changing Places Inc began in Jacksonville with a simple mission: deliver high-quality logistics solutions with a customer-first mindset. Our team is built from experienced professionals across the moving, storage, and transportation industries who are dedicated to reliability, safety, and transparency. With our 24/7 dispatch capabilities, real-time tracking, and a network that spans the U.S., we’ve grown into a trusted name in logistics.
+        </p>
+      </section>
 
   <section id="services" style="padding: 60px 20px; background-color: #203a43;">
     <h2 class="scroll-fade">Our Services</h2>
