@@ -11,6 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.png">
     <style>
+      /* Container for the section that holds everything */
+.midpage-section > div {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;  /* Ensure both the button and paragraph stretch the same height */
+  gap: 30px;
+  max-width: 1500px;  /* Increase max-width of container to give more room */
+  width: 100%;
+  margin: 0 auto;  /* Center content */
+}
+
+/* Paragraph container: Increase width further to fill more space */
+.midpage-section > div:nth-child(2) {
+  flex: 2;
+  min-width: 500px;  /* Further increase the paragraph width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blurb container */
+.midpage-section > div:nth-child(3) {
+  flex: 1;
+  min-width: 350px;  /* You can keep this or increase slightly if you prefer */
+}
+
+/* Ensure paragraph text takes up full width */
+.midpage-section p {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.4em;
+  text-align: left;
+  flex-grow: 1;  /* Allow paragraph to stretch */
+}
+
 #nav-links {
   display: flex;
   justify-content: center;
@@ -359,7 +394,6 @@ nav a:hover {
     <a href="#services">Services</a>
     <a href="#tech">Technology</a>
     <a href="#careers">Careers</a>
-    <a href="#contact">Contact</a>
   </div>
 </nav>
 <script>
@@ -426,33 +460,62 @@ nav a:hover {
     </ul>
   </section>
   <div class="midpage-section" style="padding: 10px 20px;">
-    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: 0 auto;">
-      <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
-        <a href="#contact">
-          <button class="cta-button" style="margin: 0;">Get a Free Quote</button>
-        </a>
-      </div>
-      <div style="flex: 2; min-width: 300px; display: flex; align-items: center;">
-        <p style="margin: 0; font-size: 1.05em; line-height: 1.4em; text-align: left;">
-          At Changing Places Inc, we specialize in providing reliable, full-service logistics across the continental United States. Whether you’re moving freight or storing high-value equipment, we’re your trusted partner in transportation. Our team brings years of industry expertise and leverages real-time tracking to ensure transparency and peace of mind. Built in Jacksonville and operating nationwide, we’re committed to excellence, every mile, every move. Discover the difference that DOT-certified, insured logistics can make.
-        </p>
-      </div>
-      <div style="flex: 1; min-width: 250px; display: flex; align-items: center;">
-        <p style="margin: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.05); border-left: 3px solid #33ccff; border-radius: 6px; font-size: 0.95em; line-height: 1.5em; color: #cceeff;">
-          Serving clients nationwide with precision and care, our Jacksonville-based operations are backed by 24/7 dispatch and real-time visibility tools. Let us help simplify your next move.
-        </p>
+    <div class="midpage-section" style="padding: 10px 20px;">
+      <div style="display: flex; justify-content: center; align-items: stretch; gap: 30px; max-width: 1100px; margin: 0 auto;">
+        <!-- Button Section -->
+        <div style="flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center;">
+          <a href="quote-form.html">
+            <button class="cta-button" style="margin: 0;">Get a Free Quote</button>
+          </a>          
+        </div>
+    
+        <!-- Paragraph Section: Make it wider to match height -->
+        <div style="flex: 2; min-width: 350px; display: flex; align-items: center; justify-content: center;">
+          <p style="margin: 0; font-size: 1.05em; line-height: 1.4em; text-align: left;">
+            At Changing Places Inc, we specialize in providing reliable, full-service logistics across the continental United States. Whether you’re moving freight or storing high-value equipment, we’re your trusted partner in transportation. Our team brings years of industry expertise and leverages real-time tracking to ensure transparency and peace of mind.
+          </p>
+        </div>
+    
+        <!-- Blurb Section -->
+        <div style="flex: 1; min-width: 250px; display: flex; align-items: center;">
+          <p style="margin: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.05); border-left: 3px solid #33ccff; border-radius: 6px; font-size: 0.95em; line-height: 1.5em; color: #cceeff;">
+            Serving clients nationwide with precision and care, our Jacksonville-based operations are backed by 24/7 dispatch and real-time visibility tools. Let us help simplify your next move.
+          </p>
+        </div>
       </div>
     </div>
+    
   </div>
 
   <section class="features">
         <h2 class="scroll-fade">Why Choose Us?</h2>
         <div class="features-grid">
-          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
-          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
-          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
-          <a href="#services" style="text-decoration: none; color: inherit;"><div class="feature">$1</div></a>
+          <a href="#services" style="text-decoration: none; color: inherit;">
+            <div class="feature">
+              <h3 style="margin-top: 0;">Certified & Insured Nationwide</h3>
+              <p style="margin: 0;">We’re not just movers—we’re licensed, insured, and DOT certified coast to coast. That means peace of mind for you, and full compliance for every mile of the journey.</p>
+            </div>
+          </a>
+          <a href="#tech" style="text-decoration: none; color: inherit;">
+            <div class="feature">
+              <h3 style="margin-top: 0;">24/7 Dispatch & Real-Time Updates</h3>
+              <p style="margin: 0;">Logistics never sleeps, and neither do we. Our dispatch team is available 24/7, backed by GPS tracking and real-time updates so you’re never in the dark.</p>
+            </div>
+          </a>
+          <a href="#services" style="text-decoration: none; color: inherit;">
+            <div class="feature">
+              <h3 style="margin-top: 0;">Custom Solutions, Built Around You</h3>
+              <p style="margin: 0;">No cookie-cutter crap here. From fragile freight to sensitive equipment, we tailor every move to your exact needs—because your cargo deserves white-glove treatment.</p>
+            </div>
+          </a>
+          <a href="#careers" style="text-decoration: none; color: inherit;">
+            <div class="feature">
+              <h3 style="margin-top: 0;">Proven Team, Relentless Execution</h3>
+              <p style="margin: 0;">Our crew’s made up of veterans in the game—drivers, dispatchers, and logistics pros who don’t miss. We show up, we execute, and we make your operation look damn good.</p>
+            </div>
+          </a>
         </div>
+        
       </section>
 
       <section class="testimonials">
@@ -497,12 +560,11 @@ nav a:hover {
   lazyImages.forEach(img => imageObserver.observe(img));
 </script>
     <div class="floating-buttons" style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 6px; z-index: 1000;">
-    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" style="background-color: #33ccff; color: black; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(51, 204, 255, 0.6); border: none; cursor: pointer;">
-      ✉️ Contact
-    </button>
-    <a href="tel:19043395304" style="background-color: #33ccff; color: black; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(51, 204, 255, 0.6); text-decoration: none; text-align: center;">
-      📞 Call Now
-    </a>
+      <a href="contact-form.html">
+        <button style="background-color: #33ccff; color: black; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(51, 204, 255, 0.6); border: none; cursor: pointer;">
+          ✉️ Contact Us!
+        </button>
+      </a>
   </div>
 </body>
 </html>
